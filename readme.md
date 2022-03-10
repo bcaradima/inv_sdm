@@ -4,7 +4,7 @@ This repository provides a complete set of requisite R and Python scripts that w
 1. Caradima, B., Schuwirth, N., & Reichert, P. (2019). [From individual to joint species distribution models: A comparison of model complexity and predictive performance](https://onlinelibrary.wiley.com/doi/abs/10.1111/jbi.13668?casa_token=_wDm-SIx2H0AAAAA:G5it16HoOoKi2D7Q83MJ2CnChqsFR_XqGQNYfDBR_D9wvOSJedsrhSBbNXiKlm9Fvgz7WwFshRIrloo7cQ). Journal of Biogeography, 46(10), 2260-2274. doi:10.1111/jbi.13668, [Institutional Repository](https://www.dora.lib4ri.ch/eawag/islandora/object/eawag:19054)
 2. Caradima, B., Reichert, P., & Schuwirth, N. (2020). [Effects of site selection and taxonomic resolution on the inference of stream invertebrate responses to environmental conditions](https://www.journals.uchicago.edu/doi/abs/10.1086/709024?casa_token=8JDdR3cNHHAAAAAA:9vUT51LepXNftxx5CdWBKaiwM6eakmzLrVQzZ4XHooIulgd7jP5ItPXla0seug1JMyOxQSWmY0qekA). Freshwater Science, 39(3), 415-432. doi:10.1086/709024, [Institutional Repository](https://www.dora.lib4ri.ch/eawag/islandora/object/eawag:21111)
 
-Note that these scripts are part of a wider RStudio project and R workspace I call `model_dev` in the documentation below. `model_dev` includes input data, intermediary and final outputs, documentation, and additional files. I have uploaded these scripts and readme for others to review.
+Note that these scripts are part of a wider RStudio project and R workspace referred to as `model_dev` in the documentation below. `model_dev` includes input data, intermediary and final outputs, documentation, and additional files. I have uploaded these scripts and readme for others to review.
 
 ## Workspace Organization
 `model_dev` includes the following folders:
@@ -37,10 +37,10 @@ The scripts are run as follows for both papers:
   * pre-process and calculate all potential influence factors for subsequent preparation for model inputs
   * prepares and samples observation data (for BDM, CFCH, and CFp datasets) for both papers
 4. `variable-selection.R`:
-  * given $p$ potential explanatory variables and $n$ sampled observations, performs an exhaustive search of individual models with $p$ parameters (e.g.,, 4-10 parameters) by doing 3-fold cross-validation of each individual model to taxa in the community
-  * calculates predictive performance for community for every candidate model
+  * given $p$ potential explanatory variables and $n$ sampled observations, performs an exhaustive search of individual models with $p$ parameters (e.g., 4-10 parameters) by doing 3-fold cross-validation for each individual model and taxon in the community
+  * computes predictive performance for each model for individual taxa
   * excludes models with collinear variables from validation process
-  * stores only bare minimum statistics needed for model selection in `/outputs`
+  * stores only minimum statistics required for model selection in `/outputs`
   * see paper 1 for detailed methodology
 5. `model_selection.R`:
   * no longer used; most of its outputs are incorporated in the results_ scripts for specific papers
