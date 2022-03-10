@@ -1,8 +1,13 @@
-## Summary
+## Background
 This repository provides a complete set of requisite R and Python scripts that were used to produce results for two papers (aka, paper 1 and 2) published based on findings from the [Human Impacts project](https://www.eawag.ch/en/department/siam/projects/human-impacts-on-the-community-composition-of-swiss-rivers/) at Eawag:
 
-1. Caradima, B., Schuwirth, N., & Reichert, P. (2019). [From individual to joint species distribution models: A comparison of model complexity and predictive performance](https://onlinelibrary.wiley.com/doi/abs/10.1111/jbi.13668?casa_token=_wDm-SIx2H0AAAAA:G5it16HoOoKi2D7Q83MJ2CnChqsFR_XqGQNYfDBR_D9wvOSJedsrhSBbNXiKlm9Fvgz7WwFshRIrloo7cQ). Journal of Biogeography, 46(10), 2260-2274. doi:10.1111/jbi.13668, [Institutional Repository](https://www.dora.lib4ri.ch/eawag/islandora/object/eawag:19054)
-2. Caradima, B., Reichert, P., & Schuwirth, N. (2020). [Effects of site selection and taxonomic resolution on the inference of stream invertebrate responses to environmental conditions](https://www.journals.uchicago.edu/doi/abs/10.1086/709024?casa_token=8JDdR3cNHHAAAAAA:9vUT51LepXNftxx5CdWBKaiwM6eakmzLrVQzZ4XHooIulgd7jP5ItPXla0seug1JMyOxQSWmY0qekA). Freshwater Science, 39(3), 415-432. doi:10.1086/709024, [Institutional Repository](https://www.dora.lib4ri.ch/eawag/islandora/object/eawag:21111)
+1. Caradima, B., Schuwirth, N., & Reichert, P. (2019). [From individual to joint species distribution models: A comparison of model complexity and predictive performance](https://onlinelibrary.wiley.com/doi/abs/10.1111/jbi.13668?casa_token=_wDm-SIx2H0AAAAA:G5it16HoOoKi2D7Q83MJ2CnChqsFR_XqGQNYfDBR_D9wvOSJedsrhSBbNXiKlm9Fvgz7WwFshRIrloo7cQ). Journal of Biogeography, 46(10), 2260-2274. doi:10.1111/jbi.13668, [Institutional Repository](https://www.dora.lib4ri.ch/eawag/islandora/object/eawag:19054).
+2. Caradima, B., Reichert, P., & Schuwirth, N. (2020). [Effects of site selection and taxonomic resolution on the inference of stream invertebrate responses to environmental conditions](https://www.journals.uchicago.edu/doi/abs/10.1086/709024?casa_token=8JDdR3cNHHAAAAAA:9vUT51LepXNftxx5CdWBKaiwM6eakmzLrVQzZ4XHooIulgd7jP5ItPXla0seug1JMyOxQSWmY0qekA). Freshwater Science, 39(3), 415-432. doi:10.1086/709024, [Institutional Repository](https://www.dora.lib4ri.ch/eawag/islandora/object/eawag:21111).
+
+These published papers (along with others) are also included as chapters in the following doctoral research thesis:
+
+Caradima, M. B. (2020). [Statistical species distribution modelling of stream invertebrate and fish communities](http://hdl.handle.net/20.500.11850/468125) (Doctoral dissertation, ETH Zurich). [Institutional Repository](http://hdl.handle.net/20.500.11850/468125).
+
 
 Note that these scripts are part of a wider RStudio project and R workspace referred to as `model_dev` in the documentation below. `model_dev` includes input data, intermediary and final outputs, documentation, and additional files. I have uploaded these scripts and readme for others to review.
 
