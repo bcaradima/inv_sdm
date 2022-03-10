@@ -7,22 +7,22 @@ output: html_document
 
 ## Summary
 
-This repository provides a complete set of requisite R and Python scripts that I used to produce the results for two papers (aka, paper 1 and 2) published based on findings from the [Human Impacts project](https://www.eawag.ch/en/department/siam/projects/human-impacts-on-the-community-composition-of-swiss-rivers/) at Eawag:
+This repository provides a complete set of requisite R and Python scripts that were used to produce results for two papers (aka, paper 1 and 2) published based on findings from the [Human Impacts project](https://www.eawag.ch/en/department/siam/projects/human-impacts-on-the-community-composition-of-swiss-rivers/) at Eawag:
 
 1. Caradima, B., Schuwirth, N., & Reichert, P. (2019). [From individual to joint species distribution models: A comparison of model complexity and predictive performance](https://onlinelibrary.wiley.com/doi/abs/10.1111/jbi.13668?casa_token=_wDm-SIx2H0AAAAA:G5it16HoOoKi2D7Q83MJ2CnChqsFR_XqGQNYfDBR_D9wvOSJedsrhSBbNXiKlm9Fvgz7WwFshRIrloo7cQ). Journal of Biogeography, 46(10), 2260-2274. doi:10.1111/jbi.13668, [Institutional Repository](https://www.dora.lib4ri.ch/eawag/islandora/object/eawag:19054)
 2. Caradima, B., Reichert, P., & Schuwirth, N. (2020). [Effects of site selection and taxonomic resolution on the inference of stream invertebrate responses to environmental conditions](https://www.journals.uchicago.edu/doi/abs/10.1086/709024?casa_token=8JDdR3cNHHAAAAAA:9vUT51LepXNftxx5CdWBKaiwM6eakmzLrVQzZ4XHooIulgd7jP5ItPXla0seug1JMyOxQSWmY0qekA). Freshwater Science, 39(3), 415-432. doi:10.1086/709024, [Institutional Repository](https://www.dora.lib4ri.ch/eawag/islandora/object/eawag:21111)
 
-Note that these scripts are part of a wider RStudio project and R workspace called `model_dev`, which includes input data, intermediary and final outputs, documentation, and additional files. I have uploaded these scripts and readme for others to review.
+Note that these scripts are part of a wider RStudio project and R workspace I call `model_dev` in the documentation below. `model_dev` includes input data, intermediary and final outputs, documentation, and additional files. I have uploaded these scripts and readme for others to review.
 
-## Project Organization
-The project is organized according to folders:
+## Workspace Organization
+`model_dev` includes the following folders:
 
 * `/doc` contains documentation needed for frequent reference
 * `/scripts` contains all scripts for supporting the entire model development process
   * `/python` Python scripts for spatial data processing using ArcPy library in ArcGIS 10.1 SP1 with 64-bit geoprocessing installed. Input data is not included for these due to disk space limitations. Scripts were used to develop predictor variables (e.g., F.EDO, FRI).
 * `/inputs` contains all input data read by `model_dev` scripts (usually new pre-processed inputs were copied from Human Impacts folder on server and periodically updated based on date in filename)
-* `/outputs` contains model results and processed results (e.g., plots) that are copied manually to the respective paper folder (usually /graphics):
-  * `/sampled observations` contains intermediate outputs used as observations in the model runs: randomly sampled (with set.seed) stream invertebrate observations (i.e., of entire dataset and k-fold datasets) for all paper submissions as CSV files
+* `/outputs` contains model results and processed results (e.g., plots) that are manually copied to the respective paper folder:
+  * `/sampled observations` contains intermediate outputs used as observational data for the models: randomly sampled (with set.seed) stream invertebrate observations (i.e., of entire dataset and k-fold datasets) for all paper submissions as CSV files
   * `effective_parameters` example workspaces for each model in Caradima et al. (2019) that can be used in calculating effective number of parameters (see Appendix for paper 1 and script `test_pD.R`)
   * `/paper 1 accepted` results for “paper 1 accepted” paper
   * `/paper 2 accepted` results for “paper 2 accepted” paper
@@ -55,7 +55,8 @@ The scripts are run as follows for both papers:
   * post-processing of output variable selection workspaces for final model selection
   * produces plots of mean predictive performance for community for each model
 6. `jsdm_inference.R`:
-  * prepares community and input data and calls Stan for inference according to the hierarchical multi-species and joint models described in Caradima et al. 2019
+  * prepares community and input data and calls Stan for Bayesian inference according to the hierarchical multi-species and joint models defined in Caradima et al. 2019
+  * includes Stan definitions of hierarchical and joint generalized linear models
   * initial settings in script determine Stan code construction and final name of workspace file (this is important later on for processing results; see how the identify.jsdm() function works in the functions script)
   * identify.jsdm() is later called within extract.jsdm(), cv.jsdm(), cv.jsdm.sample().
 7. `4-results_p1.R`:
